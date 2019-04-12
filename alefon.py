@@ -30,10 +30,12 @@ import os.path
 #función para contar patrones, recibe como parámetros un patrón y un archivo de texto.
 
 def PatternCount(file,pattern):
+    patternAlter = pattern[:2]+ "]|" + pattern[2:]
     # matches obtiene el valor de la búsqueda de iteraciones de el patrón recibo en el texto recibido
-    matches = re.finditer(pattern, file.read(), re.MULTILINE | re.IGNORECASE)
+    matches = re.finditer(patternAlter, file.read(), re.MULTILINE | re.IGNORECASE)
     # se cuentan las iteraciones
     for matchC, match, in enumerate(matches, start = 1):
+
         matchC = matchC
     #finalmente se imprimen el conteo de iteraciones
     result = print("The pattern ", pattern, " was found ", matchC, " times on the file.")
