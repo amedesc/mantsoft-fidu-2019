@@ -30,7 +30,7 @@ import os.path
 #función para contar patrones, recibe como parámetros un patrón y un archivo de texto.
 
 def PatternCount(file,pattern):
-    patternAlter = pattern[:2]+ "]|" + pattern[2:]
+    patternAlter = pattern[:2]+ "]|" + pattern[2:]+"|"+ pattern
     # matches obtiene el valor de la búsqueda de iteraciones de el patrón recibo en el texto recibido
     matches = re.finditer(patternAlter, file.read(), re.MULTILINE | re.IGNORECASE)
     # se cuentan las iteraciones
