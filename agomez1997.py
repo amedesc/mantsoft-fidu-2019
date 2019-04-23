@@ -1,4 +1,33 @@
+# Metodo que recibe una frase e imprime un "Hola Mundo"+ parametro recibido
+# Parametros:
+#   Frase:  Texto a mostrar.     
 def darmensaje(mensaje):
-    print("Hola mundo!!",mensaje)
-darmensaje("Hola!!")
+    print(mensaje)
+#Ejecución principal    
+#darmensaje("Hola mundo!!")
 
+
+
+# Funciónq que consiste en contar cuántas veces se encuentra un patrón en una cadena de caracteres
+# Parametros:
+#   Text:       Cadena de caracteres con el ADN
+#   Pattern:    Patrón a buscar en la cadena de caracteres Text
+# Output:
+#   Cantidad de patrones encontrados
+def PatternCount(text,pattern):
+#Se inicializa en contador antes de entrar al bucle
+    cont = 0
+#Bucle que recorre la candena de caracteres y suma las coincidencias encontradas
+    for item in range(len(text)):
+        s = text[item:len(pattern)+item]
+        if(len(s)<len(pattern)):
+            break
+        if pattern in s:
+            cont+=1
+      
+    return cont
+
+
+#Ejecución principal
+resultado=PatternCount("CCCATTAATATTAGCACCTGCCGACTAGCTGCCGACGTAACCCGTTATCCTGCCGAGGCTGCCGAATAGACTGCCGACGGTGTCTGCCGAAGAGTTCTGGTCCTGCCGACCTGCCGACCTGCCGAGAACTGCCGAGCACTGCCGACTGCCGAACTGCCGATACGATGGATCTGCCGACTTACTATGCAACCTGCCGACTGCCGACGCCCTGCCGACCACCTGCCGACTGCCGATCTGCCGAACACGGCGCTGCCGATCCTGCCGAGTCTGCCGACTGCCGATACTGCCGAGCCTGCCGATTCTGCCGACTGCCGATACATGTCCTGCCGACTTTACTGCCGAGCACTAAGGACTGCCGACTGCCGAAAATGAGTCGTCTGCCGACCAGCTGCCGACCTGCCGACTGCCGACTAATCTGCCGACTGCCGACTGCCGACTCCTGCCGATTTCAAAGGGTGCAACTGCCGACCTGCCGACTGCCGAGATGCTGCCGATACTCTGCCGAAACTCTGCCGATCAGTTGACACTGCCGACACTGCCGAACTGCCGACATTTCTGCCGACTCATCTGCCGAGCTGCCGACTGCCGACCACGCTGCCGACCTCTGCTGCCGAGGTATCCTGCCGAGTCACAACTGCCGAACTGCCGACCTGCCGATGCTGCCGATCTCCTGCCGAATTGACTGCCGACTGATATAGACTGCCGATCGGCAGTTCCTCTGCCGATCTGCCGAGCCTGCCGAATGGGACGCTGCCGACTCTGCCGAGATGTAGGCTGCCGATCGATCTGCCGAGGCTGCCGAGAGCCTGCCGACGCCTGCCGACTGCCGAATCTGCCGACTGCCGAAACCGGGGCCACTGCCGATGCGTCTGCCGATTTACTGCCGACTGCCGATCACGCTCTGCTGCCGACTGCCGATGCCTGCCGATCTGCCGAT", "CTGCCGACT");
+print("El patrón se repite "+str(resultado)+" veces en la cadena.")
